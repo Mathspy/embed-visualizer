@@ -4,32 +4,30 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const ESC = 27;
 
-const ModalContainer = React.createClass({
-  propTypes: {
+class ModalContainer extends React.Component {
+  static propTypes = {
     currentModal: React.PropTypes.func,
     close: React.PropTypes.func,
     transitionName: React.PropTypes.string,
     enterDuration: React.PropTypes.number.isRequired,
     exitDuration: React.PropTypes.number.isRequired
-  },
+  };
 
-  getDefaultProps() {
-    return { transitionName: 'modal', enterDuration: 190, exitDuration: 190 };
-  },
+  static defaultProps = { transitionName: 'modal', enterDuration: 190, exitDuration: 190 };
 
   componentDidMount() {
     document.addEventListener('keydown', this.onKeyDown);
-  },
+  }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.onKeyDown);
-  },
+  }
 
-  onKeyDown(event) {
+  onKeyDown = (event) => {
     if (event.keyCode === ESC) {
       this.props.close();
     }
-  },
+  };
 
   render() {
     const content = this.props.currentModal ? (
@@ -50,8 +48,8 @@ const ModalContainer = React.createClass({
         {content}
       </ReactCSSTransitionGroup>
     );
-  },
-});
+  }
+}
 
 
 export default ModalContainer;
