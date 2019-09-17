@@ -1,13 +1,14 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 
 class Modal extends React.Component {
   static propTypes = {
-    maxWidth: React.PropTypes.string,
-    maxHeight: React.PropTypes.string,
-    title: React.PropTypes.string,
-    close: React.PropTypes.func,
-    children: React.PropTypes.node
+    maxWidth: PropTypes.string,
+    maxHeight: PropTypes.string,
+    title: PropTypes.string,
+    close: PropTypes.func,
+    children: PropTypes.node
   };
 
   static defaultProps = { maxWidth: '60vw', maxHeight: '90vh' };

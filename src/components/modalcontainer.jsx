@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -6,11 +7,11 @@ const ESC = 27;
 
 class ModalContainer extends React.Component {
   static propTypes = {
-    currentModal: React.PropTypes.func,
-    close: React.PropTypes.func,
-    transitionName: React.PropTypes.string,
-    enterDuration: React.PropTypes.number.isRequired,
-    exitDuration: React.PropTypes.number.isRequired
+    currentModal: PropTypes.func,
+    close: PropTypes.func,
+    transitionName: PropTypes.string,
+    enterDuration: PropTypes.number.isRequired,
+    exitDuration: PropTypes.number.isRequired
   };
 
   static defaultProps = { transitionName: 'modal', enterDuration: 190, exitDuration: 190 };
